@@ -1,0 +1,83 @@
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Calcul facture</ion-title>
+            
+        <ion-buttons start>
+            <button ion-button icon-only 
+            (click)="PushToReceptionPage()">
+              <ion-icon name="home"></ion-icon>
+            </button>  
+           
+            
+            
+          </ion-buttons>
+       
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+           <ion-item>
+        
+                  <p>{{index}}</p>
+                 <p>{{msg}}</p> 
+
+                  <button ion-button (click)="ChangerIndex()">{{msgindex}} votre index</button>
+
+           </ion-item>
+
+       
+        <ion-item>
+        
+                    <ion-label floating >valeur de votre compteur(en KW)</ion-label>
+        
+                <ion-input [disabled]=compteurd  type="number" [(ngModel)]="compteur"></ion-input>
+        
+        </ion-item>
+
+        <ion-item>
+        
+            <ion-label floating>votre credit(en dinar) </ion-label>
+
+            <ion-input [disabled]=variable  type="number" [(ngModel)]="credit"  >{{msg}}</ion-input>
+
+        </ion-item>
+        
+        
+    
+        
+         
+        
+            <button ion-button outline (click)="calcul()">Calculer consommation</button>
+        
+         
+        
+            <ion-card>
+        
+                <ion-card-header>
+        
+                    Resultat de calcul:
+        
+                </ion-card-header>
+        
+                <ion-card-content>
+              
+                    <p> {{mtaxes}} </p>
+                            
+                    <p> {{mfacture}}</p>
+
+
+                </ion-card-content>
+        
+            </ion-card>
+        
+         
+        
+
+</ion-content>

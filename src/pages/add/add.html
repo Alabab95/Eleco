@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>add</ion-title>
+
+    <ion-buttons start>
+      <button ion-button icon-only 
+      (click)="PushToListPage()">
+        <ion-icon name="md-arrow-round-back"></ion-icon>
+      </button>  
+     
+    </ion-buttons>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  
+  
+
+    <h3>{{msg}}</h3>
+    <ion-item>
+        <p> nom de produit : {{name}} </p> 
+        <p>consommation de produit : {{consommation}}KW</p>
+        <p>categorie de produit :{{categorie}}</p>
+        <p>code abar :{{code}}</p>
+    </ion-item>
+    
+      <ion-item>
+        <ion-label floating>quantité de produit</ion-label>
+        <ion-input type="number" [(ngModel)]="number"></ion-input>
+      </ion-item>
+    
+      <button ion-button block (click)="ajouterproduit()">ajouter produit</button>
+
+</ion-content>

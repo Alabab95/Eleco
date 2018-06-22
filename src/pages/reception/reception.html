@@ -1,0 +1,85 @@
+
+
+<ion-header>
+        <ion-toolbar color="dark">
+                <ion-buttons start left>
+                        <button ion-button icon-only menuToggle>
+                            <ion-icon name="menu">
+                                
+                            </ion-icon>
+                        </button>  
+                    </ion-buttons>  
+
+       
+          <ion-title >
+            <span text-color="my-custom-color" class="p"> ELEC-ECO </span>
+          </ion-title>
+          <ion-buttons end  >
+                <button color="yellow" ion-button icon-only 
+                (click)="pushToStatPage()">
+                  <ion-icon name="stats"></ion-icon>
+                </button>  
+          
+                <button color="yellow" ion-button icon-only 
+                (click)="pushToInfoPage()">
+                  <ion-icon name="bulb"></ion-icon>
+                </button>  
+               
+              </ion-buttons>
+              
+       
+    </ion-toolbar>
+      </ion-header>
+
+
+<ion-menu [content]="content">
+  <ion-header>
+      <ion-toolbar> 
+          <ion-buttons start left>
+              <button ion-button icon-only menuToggle>
+                  <ion-icon name="menu">
+                      
+                  </ion-icon>
+              </button>  
+          </ion-buttons>    
+      
+    </ion-toolbar>
+  </ion-header>
+    
+
+<ion-content>
+      <ion-list >
+          <ion-item color="none" menuClose="" >
+            <h2>Votre email :</h2><br>
+              <p>{{email}}</p>
+          </ion-item>
+
+          <ion-item color="none" menuClose="" >
+              <h2>Nombre de produits dans votre profil</h2><br>
+              <p>{{nbproduit}}</p>
+          </ion-item>
+
+
+<button ion-button block (click) ="GoToRapport()"color="primary">contacter nous</button><br>
+
+    <button ion-button block (click) ="Logout()" color="primary">deconnecter</button><br>
+
+    <button ion-button block (click) ="showConfirm()"color="dark">Supprimer vos donnes</button>
+
+          
+      </ion-list>
+</ion-content>
+</ion-menu> 
+
+<ion-nav [root]="rootPage" #content></ion-nav>
+
+
+<ion-tabs tabsPlacement="top" >
+  <ion-tab tabIcon="basket" tabTitle="Recommandation" [root]="aRoot"></ion-tab>
+  <ion-tab tabIcon="calculator" tabTitle="Consommation" [root]="bRoot"></ion-tab>
+  <ion-tab tabIcon="person" tabTitle="Profil" [root]="cRoot"></ion-tab>
+  <ion-tab tabIcon="star" tabTitle="Favoris" tabBadge= "{{(count | async)?.length}}" tabBadgeStyle="danger"  [root]="dRoot"></ion-tab>
+
+</ion-tabs>
+
+

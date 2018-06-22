@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>manipulation index</ion-title>
+
+    <ion-buttons start>
+      <button ion-button icon-only 
+      (click)="PushToCalculPage()">
+        <ion-icon name="md-arrow-back"></ion-icon>
+      </button>  
+     
+      
+      
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  
+        
+        <h3>{{msg}}</h3>
+
+        <ion-item>
+        <ion-label floating>entrer votre index(en KW)</ion-label>
+        <ion-input  type="number" [(ngModel)]="index"></ion-input>
+        </ion-item>
+
+        <button ion-button (click)="Valider()">valider votre index</button>
+
+
+
+
+</ion-content>

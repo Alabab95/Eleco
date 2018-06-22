@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{p.produit.name}}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  
+  <ion-item>
+    <ion-label floating>nom de produit</ion-label>
+    <ion-input type="text" [(ngModel)]="produit.name">{{produit.name}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>consommation de produit(KW)</ion-label>
+    <ion-input type="number" [(ngModel)]="produit.consommation">{{produit.consommation}}</ion-input>
+  </ion-item>
+
+
+  <button ion-button clear color="positive" block (click)="scan()" >
+    scanner votre code a barre      </button>
+  <ion-item>
+    <ion-label floating>ou entrer votre code a barre manuellement </ion-label>
+    <ion-input type="number" [(ngModel)]="produit.code" >{{produit.code}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>quantité de Produit</ion-label>
+    <ion-input type="number" [(ngModel)]="number" >{{number}}</ion-input>
+  </ion-item>
+
+   
+  <ion-item >
+    <ion-label>{{produit.categorie}}</ion-label>
+    <ion-select [(ngModel)]="produit.categorie" >
+      <ion-option>Électroménager</ion-option>
+      <ion-option>Téléviseurs </ion-option>
+      <ion-option> Informatique</ion-option>
+      <ion-option>Ampoules</ion-option>
+      <ion-option>Autres</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button block (click)="presentConfirm(produit)">modifier Produit</button>
+</ion-content>

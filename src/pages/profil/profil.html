@@ -1,0 +1,38 @@
+
+
+
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title >
+        <span text-color="my-custom-color" class="p"> profil </span>
+      </ion-title>
+      <ion-buttons end>
+          <button color="yellow" ion-button icon-only 
+          (click)="PushToSearchPage()">
+            <ion-icon name="search"></ion-icon>
+          </button>  
+         
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let profil of profilList " (click)="selectProduit(profil)">
+          <h2><span text-color="color" class="p">Nom: </span> {{ profil.produit.name }} </h2> 
+          <h2><span text-color="color" class="p">Catégorie: </span>{{ profil.produit.categorie }} </h2>
+          <h2><span text-color="color" class="p">Consommation: </span> {{ profil.produit.consommation }}KW </h2>
+          <h2><span text-color="color" class="p">Quantité: </span>{{ profil.number }} </h2>
+          
+          
+    
+        </ion-item>
+      </ion-list>
+      
+      <button ion-button icon-left block (click)="PushToReceptionPage()">
+          <ion-icon name="checkmark-circle"></ion-icon>
+          Ajouter un produit 
+        </button>
+</ion-content>

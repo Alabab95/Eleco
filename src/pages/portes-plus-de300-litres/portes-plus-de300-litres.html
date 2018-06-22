@@ -1,0 +1,33 @@
+
+  <ion-header>
+    <ion-navbar>
+      
+      <ion-title>
+        2 Portes plus de 300 litres
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding id="page12">
+    <ion-list *ngFor="let item of items | async">
+  
+          
+      <ion-item-divider color="light" id="tailleInfRieure70Cm-list-item-divider13">
+        
+        {{item.Model}}
+        
+      </ion-item-divider>
+      <img [src]="sanitize(item.Image)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+      <p style="color:#000000;font-size:12px;">
+                 Prix d'achat (Dinar): {{item.Prix}}
+          <br /> Consommation énergie (kWh/an) : {{item.Cons}}
+          <br /> Dimensions H x L x P (cm) : {{item.Def}}
+          <br /> Classe énergie : {{item.CE}}
+      </p>
+      <button (click) ="AddToFavourites(item)" id="tailleInfRieure70Cm-button1" ion-button clear color="energized" block small>
+        <ion-icon name="star-outline"></ion-icon>
+        Add to favorites
+      </button>
+    </ion-list>
+          
+        
+  </ion-content>

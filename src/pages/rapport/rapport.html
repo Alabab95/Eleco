@@ -1,0 +1,60 @@
+
+
+<ion-header>
+  <ion-toolbar color="dark">
+      <ion-buttons start >
+          <button color="yellow" ion-button icon-only 
+          (click)="return()">
+            <ion-icon name="return-left"></ion-icon>
+          </button>  
+         
+        </ion-buttons>
+ 
+    <ion-title >
+      <span text-color="my-custom-color" class="p"> contactez nous </span>
+    </ion-title>
+   
+ 
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+   
+    
+  <h3><span text-color="color" >Questions ou commantaires ? rester en contact </span></h3>
+    <ion-item>
+        <ion-label color="primary" floating >votre message</ion-label>
+        <ion-textarea [(ngModel)]="msgrapport" [attr.rows]="4" > </ion-textarea>
+    </ion-item>
+    <button ion-button block (click) ="Send()" color="secondary">envoyer votre message</button>
+
+   
+ <ion-list *ngFor="let item of items | async">
+  
+    <ion-card  *ngIf="item.user==user ">
+        <ion-card-header>
+         <h3> <b>votre rapport ou commantaire</b></h3>
+        </ion-card-header>
+        <ion-card-content>
+          {{item.rapport}}
+        </ion-card-content>
+
+        <ion-card-header>
+           <h3><b>notre réponse</b></h3> 
+          </ion-card-header>
+
+          <ion-card-content *ngIf="item.reponse!='';else other_content" >
+            {{item.reponse}}
+          </ion-card-content>
+
+          <ng-template #other_content>  
+            <ion-card-content>
+              pas de reponse pour le moment 
+            </ion-card-content>
+    </ng-template>
+
+      </ion-card>
+   
+  </ion-list>
+</ion-content>

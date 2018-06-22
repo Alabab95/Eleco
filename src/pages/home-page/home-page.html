@@ -1,0 +1,27 @@
+<ion-header >
+  <ion-navbar color="primary" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >
+      ELEC-ECO
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background-color: black" >
+    <br><br>
+    <img [src]="sanitize(Image)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+    <br><br><br><br><br><br>
+  <button id="homePage-button4" ion-button color="primary" block on-click="goToRegister()">
+    Inscription
+  </button>
+  <br>
+  <button id="homePage-button5" ion-button color="primary" block on-click="goToLogin()">
+    Se connecter
+  </button>
+  <br>
+
+  <button block ion-button color="primary" (click)="recommander()">Recommandations</button>
+
+
+</ion-content>

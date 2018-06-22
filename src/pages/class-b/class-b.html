@@ -1,0 +1,54 @@
+
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>entre 50KW et 100KW</ion-title>
+        
+        <ion-buttons start>
+            <button ion-button icon-only 
+            (click)="PushToProfilePage()">
+              <ion-icon name="contact"></ion-icon>
+            </button>  
+           
+            
+            
+          </ion-buttons>
+    
+        <ion-buttons end>   
+          <button ion-button icon-only 
+          (click)="navigateToAddShoppingPage()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+      
+    
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-searchbar (ionInput)="getItems($event)"  ></ion-searchbar>
+        
+    <ion-fab bottom right >
+      <button ion-fab>options</button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="scan()"><ion-icon name="barcode"></ion-icon></button>
+      </ion-fab-list>
+      <ion-fab-list side="left">
+        <button ion-fab (click)="PushToSearchPage()"><ion-icon name="search"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+  
+
+
+<ion-list>
+<ion-item *ngFor="let produit of produitList " (click)="selectProduit(produit)">
+  <h2>Nom de produit : {{ produit.name }} </h2>
+  <h2>Categorie de produit: {{ produit.categorie }} </h2>
+  <h2>Consommation de produit : {{ produit.consommation }} (KW)</h2>
+  </ion-item>
+  </ion-list>
+
+
+</ion-content>

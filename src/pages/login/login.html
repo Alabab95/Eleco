@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title >
+        <span text-color="my-custom-color" class="p"> Connectez-vous à votre compte </span>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding id="page9">
+  <form id="login-form2">
+    <ion-list id="login-list2">
+      <ion-item id="login-input4">
+        <ion-label floating>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="" #username></ion-input>
+      </ion-item>
+      <ion-item id="login-input5">
+        
+        <ion-label  floating>
+          Mot de passe
+        </ion-label>
+        <ion-input type="password" placeholder="" #password></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button  ion-button color="stable" block (click)="EmailLogin()">
+      Connexion
+    </button>
+    <button ion-button clear color="positive" block (click)="resetPassword()" >
+      Mot de passe oublié ? 
+    </button>
+    
+    <div class="spacer" style="height:20px;" id="login-spacer1"></div>
+
+    <button id="login-button8" ion-button clear color="positive" block (click)="PushToSingup()" >
+     Ou créer un compte
+    </button>
+        
+    <div class="spacer" style="height:40px;" ></div>
+    <h4 >
+       Tu peux aussi 
+    </h4>
+          <button ion-button block icon-right (click)="Facbooklogin()">
+            Connexion avec
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+      
+
+  </form>
+</ion-content>

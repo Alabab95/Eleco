@@ -1,0 +1,32 @@
+page-shopping-list {
+.inline {display : inline-block;}
+
+[text-color="my-custom-color"] {
+    color: yellow;
+}
+[text-color="color"] {
+    color: #696969;
+}
+
+.p
+{
+font-size:  medium;
+font-family: 'Comic Sans MS ', Helvetica, Arial, sans-serif;
+}
+
+}
+.fab-label {
+    position: absolute;
+    background: lightslategrey;
+    height: 24px;
+    line-height: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+.fab-label-mov {
+    margin-left: -90px; /* Custom for each label */
+}

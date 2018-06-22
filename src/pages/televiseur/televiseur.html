@@ -1,0 +1,52 @@
+
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>categorie televiseur</ion-title>
+        
+        <ion-buttons start>
+            <button ion-button icon-only 
+            (click)="PushToProfilePage()">
+              <ion-icon name="contact"></ion-icon>
+            </button>  
+           
+            
+            
+          </ion-buttons>
+    
+        <ion-buttons end>   
+          <button ion-button icon-only 
+          (click)="navigateToAddShoppingPage()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+    
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-searchbar (ionInput)="getItems($event)"  ></ion-searchbar>
+        
+        <button ion-button icon-only block
+        (click)="scan()" >
+        <ion-icon name="barcode"></ion-icon>
+        </button>
+
+     
+      
+    
+
+  <ion-list>
+    <ion-item *ngFor="let produit of produitList " (click)="selectProduit(produit)">
+      <h2> {{ produit.name }} </h2>
+      <h2> {{ produit.categorie }} </h2>
+      <h2> {{ produit.consommation }} </h2>
+      
+
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

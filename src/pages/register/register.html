@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title >
+      <span text-color="my-custom-color" class="p"> Creér un compte </span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list>
+
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Confirmé mot de passe </ion-label>
+    <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
+  </ion-item>
+  
+</ion-list>
+
+<div padding>
+  <button block ion-button (click)="registerUser()" item-left>Inscription</button>
+</div>
+
+</ion-content>

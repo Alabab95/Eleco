@@ -1,0 +1,8 @@
+{
+  "name": "FirebaseCRUD",
+  "app_id": "fed6aa99",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

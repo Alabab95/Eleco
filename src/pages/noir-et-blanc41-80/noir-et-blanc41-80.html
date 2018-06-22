@@ -1,0 +1,35 @@
+<!--
+  Generated template for the GoToImprCouleur1_20Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Noir et blanc 41-80ppm</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngFor="let item of items | async">
+
+        
+    <ion-item-divider color="light" id="tailleInfRieure70Cm-list-item-divider13">
+      
+      {{item.Model}}
+      
+    </ion-item-divider>
+    <img [src]="sanitize(item.Image)" style="display:block;width:80%;height:auto;margin-left:auto;margin-right:auto;" />
+    <p style="color:#000000;font-size:12px;">
+      Prix moyen d'achat (Dinar) : {{item.Prix}}
+      <br /> Fonction recto/verso : {{item.Recto}}
+    </p>
+    <button (click) ="AddToFavourites(item)" id="tailleInfRieure70Cm-button1" ion-button clear color="energized" block small>
+      <ion-icon name="star-outline"></ion-icon>
+      Add to favorites
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Créer un produit</ion-title>
+
+   
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Nom du produit</ion-label>
+    <ion-input type="text" [(ngModel)]="produit.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Consommation du produit (KW)</ion-label>
+    <ion-input type="number" [(ngModel)]="produit.consommation"></ion-input>
+  </ion-item>
+
+
+
+  <button ion-button clear color="positive" block (click)="scan()" >
+    Scanner votre code a barre      </button>
+
+
+  <ion-item>
+    <ion-label floating>Ou entrer votre code à barre manuellement </ion-label>
+    <ion-input type="number" [(ngModel)]="produit.code" >{{produit.code}}</ion-input>
+  </ion-item>
+
+
+   
+  <ion-item >
+    <ion-label>Categorie de produit</ion-label>
+    <ion-select [(ngModel)]="produit.categorie" >
+      <ion-option>Électroménager</ion-option>
+      <ion-option>Téléviseurs </ion-option>
+      <ion-option> Informatique</ion-option>
+      <ion-option>Ampoules</ion-option>
+      <ion-option>Autres</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button block (click)="ajouterproduit(produit)">Ajouter le produit</button>
+  
+</ion-content>

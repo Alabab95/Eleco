@@ -1,0 +1,73 @@
+
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title >
+      <span text-color="my-custom-color" class="p"> recherche produit </span>
+    </ion-title>
+
+    
+
+        <ion-buttons start>
+          <button  color="yellow"  ion-button icon-only 
+          (click)="PushToProfilePage()">
+            <ion-icon name="contact"></ion-icon>
+          </button>  
+         
+          
+          
+        </ion-buttons>
+  
+      <ion-buttons end>   
+        <button  color="yellow" ion-button icon-only 
+        (click)="navigateToAddShoppingPage()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+       
+        
+        
+      
+  
+</ion-header>
+
+<ion-content>
+  
+    
+
+    <ion-searchbar (ionInput)="getItems($event)"  >
+      
+    </ion-searchbar>
+    <ion-fab  right top>
+      <button ion-fab mini (click)="newP()"><ion-icon name="add" ></ion-icon></button>
+    </ion-fab>  
+    
+
+
+
+
+      <ion-fab bottom right >
+        <button ion-fab>Options</button>
+        <ion-fab-list side="top">
+          <button ion-fab (click)="scan()"><ion-icon name="barcode"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list side="left">
+          <button ion-fab (click)="PushToTrie()"><ion-icon name="md-funnel"></ion-icon></button>        </ion-fab-list>
+      </ion-fab>
+      
+    
+
+  <ion-list>
+    <ion-item *ngFor="let produit of produitList " (click)="selectProduit(produit)">
+      <h2><span text-color="color" class="p">Nom: </span>{{ produit.name }} </h2>
+      <h2><span text-color="color" class="p">Catégorie: </span>{{ produit.categorie }} </h2>
+       <h2><span text-color="color" class="p">consommation: </span> {{ produit.consommation }} (KW)</h2>
+      
+
+    </ion-item>
+  </ion-list>
+
+ 
+
+</ion-content>

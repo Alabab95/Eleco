@@ -1,0 +1,66 @@
+
+
+
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title >
+        <span text-color="my-custom-color" class="p"> statistique </span>
+      </ion-title>
+      <button color="yellow" ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+       
+    </ion-navbar>
+  </ion-header>
+
+
+
+
+
+  <ion-content padding>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: block;">
+        <canvas baseChart width="300" height="400"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <h2><span text-color="color" class="p">consommation electrique des produits selon leur catégorie </span></h2>
+    
+
+    <div style="display: block">
+      <canvas baseChart width="200" height="300" 
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+    </div>
+
+    <h2><span text-color="color" class="p">comparison entre vous et les autres utilisateurs </span></h2>
+    
+    <div>
+      <div style="display: block" >
+        <canvas baseChart width="300" height="400"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    
+</ion-content>
